@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasper｜iBind 伴伴創辦人 × AI 科技轉型顧問</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        healthBlue: '#0048BD',
+                        healthGreen: '#009944',
+                        accentOrange: '#FF9C00',
+                        accentTeal: '#0095AD',
+                        accentPurple: '#623333',
+                        skyBlue: '#E6F0FA',
+                        mintGreen: '#E8F6EF',
+                        lightBluish: '#F2F5F9',
+                        warmBeige: '#FFF6E5',
+                        darkText: '#1a1a1a',
+                        mediumGray: '#666666',
+                        lightGray: '#999999'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Modern Glassmorphism Styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.05);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+        /* Custom Gradient Background Grid */
+        .bg-tech-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 72, 189, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 72, 189, 0.04) 1px, transparent 1px);
+        }
+        /* Gradient Text Helper */
+        .gradient-text {
+            background: linear-gradient(135deg, #0048BD 0%, #0095AD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Dynamic Button Hover Glow */
+        .btn-connect {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-connect:hover {
+            box-shadow: 0 0 25px rgba(0, 153, 68, 0.45);
+            border-color: #009944;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        /* Typewriter Cursor */
+        .cursor-blink {
+            display: inline-block;
+            width: 3px;
+            background-color: #2563eb;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-white antialiased selection:bg-blue-100 selection:text-healthBlue">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-healthBlue to-accentTeal flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform duration-300">
+                        iB
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-darkText text-lg tracking-tight group-hover:text-healthBlue transition-colors">iBind 伴伴</span>
+                        <span class="text-xs text-slate-500 font-medium">Jasper | AI Transformation</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-healthBlue transition-colors">關於我</a>
+                    <a href="#solutions" class="text-sm font-medium text-slate-600 hover:text-healthBlue transition-colors">AI 解決方案</a>
+                    <a href="#architecture" class="text-sm font-medium text-slate-600 hover:text-healthBlue transition-colors">服務架構</a>
+                    <a href="#academic" class="text-sm font-medium text-slate-600 hover:text-healthBlue transition-colors">經歷與專長</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-healthBlue transition-colors">聯絡諮詢</a>
+                </nav>
+
+                <!-- Navigation Right Action -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://calendar.app.google/W179hdprWdTmcQws8" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-medium text-white bg-gradient-to-r from-healthBlue to-accentTeal hover:shadow-lg hover:shadow-healthBlue/25 transition-all duration-300 hover:-translate-y-0.5">
+                        <i class="fa-regular font-normal fa-calendar-check mr-2"></i> 預約策略諮詢
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-healthBlue focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-base font-medium text-slate-700 hover:text-healthBlue">關於我</a>
+            <a href="#solutions" class="block py-2 text-base font-medium text-slate-700 hover:text-healthBlue">AI 解決方案</a>
+            <a href="#architecture" class="block py-2 text-base font-medium text-slate-700 hover:text-healthBlue">服務架構</a>
+            <a href="#academic" class="block py-2 text-base font-medium text-slate-700 hover:text-healthBlue">經歷與專長</a>
+            <a href="#contact" class="block py-2 text-base font-medium text-slate-700 hover:text-healthBlue">聯絡諮詢</a>
+            <a href="https://calendar.app.google/W179hdprWdTmcQws8" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-3 mt-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-healthBlue to-accentTeal">
+                預約策略諮詢
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-tech-grid">
+        <!-- Interactive Tech Canvas Background -->
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-70"></canvas>
+        
+        <!-- Subtle Ambient Glow Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-blue-200/40 via-purple-200/30 to-emerald-100/20 rounded-full filter blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Badge Indicator -->
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50/80 border border-blue-200/60 text-healthBlue text-xs sm:text-sm font-semibold mb-8 shadow-sm backdrop-blur-md">
+                <span class="flex h-2 w-2 rounded-full bg-healthBlue mr-2.5 animate-ping"></span>
+                iBind 伴伴 創辦人 × AI 轉型顧問
+            </div>
+
+            <!-- Main Typewriter Title -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-darkText leading-tight sm:leading-snug tracking-tight min-h-[120px] sm:min-h-[140px] flex items-center justify-center">
+                <span id="typewriter-text" class="gradient-text"></span>
+                <span class="cursor-blink ml-1 h-8 sm:h-12">&nbsp;</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+                結合人工智慧應用、大型語言模型（LLM）與數據分析，為教育、托育與護理產業打造兼具高效率與人性溫度的數位生態系統。
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <!-- Interactive Button with Hover Status Tag -->
+                <a id="hero-cta-btn" href="https://calendar.app.google/W179hdprWdTmcQws8" target="_blank" rel="noopener noreferrer" 
+                   class="btn-connect group relative inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white/90 border-2 border-slate-200 text-slate-800 font-semibold text-base shadow-lg backdrop-blur-lg overflow-hidden">
+                    <span class="btn-text transition-all duration-300 group-hover:text-emerald-700">
+                        <i class="fa-solid fa-comments text-healthBlue group-hover:text-healthGreen mr-2 transition-colors"></i>
+                        預約專業諮詢
+                    </span>
+                    <!-- Hover Status Badge Injection -->
+                    <span class="status-tag hidden group-hover:inline-flex items-center ml-3 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 animate-fade-in">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+                        Status: Ready to Connect
+                    </span>
+                </a>
+
+                <a href="#solutions" class="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-slate-100/80 hover:bg-slate-200/80 text-slate-700 font-semibold text-base transition-all duration-300 backdrop-blur-md">
+                    探索 AI 解決方案 <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Floating Tech Metric Cards -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="glass-card p-5 rounded-2xl text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-healthBlue">3+ 年</div>
+                    <div class="text-xs sm:text-sm text-slate-500 mt-1">深耕幼照數位轉型</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-accentTeal">台大/北市大</div>
+                    <div class="text-xs sm:text-sm text-slate-500 mt-1">資料科學 & AI 講師</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-healthGreen">跨場域</div>
+                    <div class="text-xs sm:text-sm text-slate-500 mt-1">月子中心/幼兒園顧問</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-darkText">100%</div>
+                    <div class="text-xs sm:text-sm text-slate-500 mt-1">以人為本的科技理念</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Website & Service Architecture Section (樹狀圖區塊) -->
+    <section id="architecture" class="py-20 bg-lightBluish relative border-y border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-healthBlue tracking-widest uppercase mb-2">Ecosystem & Architecture</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-darkText">品版網頁與服務架構樹狀圖</h3>
+                <p class="mt-4 text-slate-600">清晰盤點「iBind 伴伴」與 Jasper 提供的核心服務鏈及網頁內容佈局。</p>
+            </div>
+
+            <!-- Tree Map Visualization Container -->
+            <div class="glass-card p-6 sm:p-10 rounded-3xl overflow-x-auto shadow-sm">
+                <div class="min-w-[700px] flex flex-col items-center">
+                    
+                    <!-- Root Node -->
+                    <div class="px-6 py-3 rounded-2xl bg-gradient-to-r from-healthBlue to-accentTeal text-white font-bold text-lg shadow-md flex items-center space-x-2">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <span>Jasper 個人品牌 & iBind 伴伴</span>
+                    </div>
+
+                    <!-- Vertical Connector -->
+                    <div class="w-0.5 h-8 bg-slate-300 my-1"></div>
+                    <div class="w-[85%] h-0.5 bg-slate-300"></div>
+
+                    <!-- Second Tier Branches -->
+                    <div class="w-full grid grid-cols-5 gap-2 pt-2">
+                        
+                        <!-- Branch 1 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-0.5 h-6 bg-slate-300"></div>
+                            <div class="w-full p-3 bg-white border border-blue-200 rounded-xl text-center shadow-sm">
+                                <span class="font-bold text-xs text-healthBlue block">01. 關於我</span>
+                                <span class="text-[11px] text-slate-500 mt-1 block">創辦理念 / 專業經歷</span>
+                            </div>
+                        </div>
+
+                        <!-- Branch 2 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-0.5 h-6 bg-slate-300"></div>
+                            <div class="w-full p-3 bg-white border border-purple-200 rounded-xl text-center shadow-sm">
+                                <span class="font-bold text-xs text-accentTeal block">02. AI 解決方案</span>
+                                <span class="text-[11px] text-slate-500 mt-1 block">客製 AI / RPA / 數據分析</span>
+                            </div>
+                        </div>
+
+                        <!-- Branch 3 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-0.5 h-6 bg-slate-300"></div>
+                            <div class="w-full p-3 bg-white border border-emerald-200 rounded-xl text-center shadow-sm">
+                                <span class="font-bold text-xs text-emerald-600 block">03. 轉型顧問</span>
+                                <span class="text-[11px] text-slate-500 mt-1 block">知識庫建置 / 行銷漏斗</span>
+                            </div>
+                        </div>
+
+                        <!-- Branch 4 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-0.5 h-6 bg-slate-300"></div>
+                            <div class="w-full p-3 bg-white border border-slate-300 rounded-xl text-center shadow-sm">
+                                <span class="font-bold text-xs text-slate-700 block">04. 學術與專長</span>
+                                <span class="text-[11px] text-slate-500 mt-1 block">台大講師 / LLM & GCP</span>
+                            </div>
+                        </div>
+
+                        <!-- Branch 5 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-0.5 h-6 bg-slate-300"></div>
+                            <div class="w-full p-3 bg-white border border-blue-300 rounded-xl text-center shadow-sm">
+                                <span class="font-bold text-xs text-healthBlue block">05. 聯絡預約</span>
+                                <span class="text-[11px] text-slate-500 mt-1 block">Google Calendar 1-on-1</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Profile Summary -->
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-healthBlue/20 to-accentTeal/20 rounded-3xl filter blur-2xl opacity-70"></div>
+                        <div class="glass-card p-8 rounded-3xl relative">
+                            <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-healthBlue to-accentTeal flex items-center justify-center text-white text-3xl font-bold mb-6 shadow-xl">
+                                Jasper
+                            </div>
+                            <h3 class="text-2xl font-bold text-darkText">Jasper</h3>
+                            <p class="text-healthBlue font-semibold text-sm mt-1">iBind 伴伴 創辦人 × AI 轉型顧問</p>
+                            
+                            <hr class="my-6 border-slate-200">
+
+                            <!-- Core Value Callout -->
+                            <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-100">
+                                <i class="fa-solid fa-quote-left text-healthBlue text-lg mb-2 block"></i>
+                                <p class="text-sm text-slate-700 italic font-medium leading-relaxed">
+                                    「真正有價值的技術，不只是追求效率與速度，更應該成為連結人與人之間關係的橋樑。」
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Biography & Story -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold text-healthBlue tracking-widest uppercase">About Me</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-darkText mt-2">重新定義教育與照護的服務模式</h2>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        我是 Jasper，也是「iBind 伴伴」的創辦人。長期專注於教育科技、人工智慧應用與數位轉型領域。我希望透過技術的力量，協助教育產業建立更有效率、更有溫度的管理模式，讓科技真正回到「人」的需求之中。
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        在過去三年的實務歷程中，我持續深耕幼教與照護產業，累積了跨產業、跨領域的整合經驗，從市場分析、品牌策略、人工智慧應用，到系統規劃與數位轉型推動，皆投入大量心力，致力於打造兼具創新性與實用性的解決方案。
+                    </p>
+
+                    <!-- Key Milestones -->
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <div class="p-1.5 rounded-lg bg-blue-100 text-healthBlue mt-1">
+                                <i class="fa-solid fa-circle-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darkText text-sm">創辦「iBind 伴伴」</h4>
+                                <p class="text-xs text-slate-500">專注於教育產業數位化與智慧管理服務，協助機構組織賦能。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="p-1.5 rounded-lg bg-purple-100 text-accentTeal mt-1">
+                                <i class="fa-solid fa-circle-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darkText text-sm">跨機構數位轉型首席講師</h4>
+                                <p class="text-xs text-slate-500">擔任月子中心、托嬰中心及幼兒園講師，協助第一線工作者導入數位工具。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="p-1.5 rounded-lg bg-emerald-100 text-healthGreen mt-1">
+                                <i class="fa-solid fa-circle-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darkText text-sm">雙北專案策略整合經驗</h4>
+                                <p class="text-xs text-slate-500">參與台北市與新北市多項數位轉型專案，建立永續發展的數位架構。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Solutions & Services Section -->
+    <section id="solutions" class="py-24 bg-lightBluish relative border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-healthBlue tracking-widest uppercase">Solutions & Services</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-darkText mt-2">數位轉型解決方案｜從工具導入到組織賽能</h2>
+                <p class="mt-4 text-slate-600">
+                    真正有效的轉型來自於「技術、流程與人才」三者之間的整合。我們協助機構從需求盤點、流程分析到系統建置，打造永續的數位生態系統。
+                </p>
+            </div>
+
+            <!-- Services Grid: Split into AI Tech Services & Consulting Services -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Service Card 1: AI Tech Services -->
+                <div class="glass-card p-8 rounded-3xl relative group hover:-translate-y-1.5 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-100 text-healthBlue flex items-center justify-center text-2xl mb-6 group-hover:bg-healthBlue group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-darkText mb-3">AI 技術服務</h3>
+                    <p class="text-slate-500 text-sm mb-6">利用前沿生成式 AI 與自動化架構，打造高度客製化的智慧營運系統。</p>
+                    
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-healthBlue mr-2.5 mt-1"></i>
+                            <span><strong>客製化 AI Chatbot 開發：</strong>打造專屬知識庫助理與智慧客服系統。</span>
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-healthBlue mr-2.5 mt-1"></i>
+                            <span><strong>中心內部 AI 教育訓練：</strong>建立團隊的大型語言模型（LLM）應用實力。</span>
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-healthBlue mr-2.5 mt-1"></i>
+                            <span><strong>工作流程自動化（RPA）：</strong>降低重複性行政負擔，提升營運效率。</span>
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-healthBlue mr-2.5 mt-1"></i>
+                            <span><strong>異質系統資料串接：</strong>整合分散資訊，串接一致且可靠的資訊流。</span>
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-healthBlue mr-2.5 mt-1"></i>
+                            <span><strong>數據分析與預測模型：</strong>透過資料洞察賦能管理者的精準決策。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2: Professional Consulting Services -->
+                <div class="glass-card p-8 rounded-3xl relative group hover:-translate-y-1.5 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-100 text-accentTeal flex items-center justify-center text-2xl mb-6 group-hover:bg-accentTeal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-darkText mb-3">專業顧問服務</h3>
+                    <p class="text-slate-500 text-sm mb-6">從組織變革到人才培養，協助企業建立靈活應變的數位文化與知識體系。</p>
+                    
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-accentTeal mr-2.5 mt-1"></i>
+                            <span><strong>組織專屬數位轉型知識庫：</strong>約積內部標準化流程與寶貴營運經驗。</span>
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-accentTeal mr-2.5 mt-1"></i>
+                            <span><strong>0 到 1 轉型團隊建置顧問：</strong>揶準建立跨部門協作機制與敏捷執行架構。</span>
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-accentTeal mr-2.5 mt-1"></i>
+                            <span><strong>行銷自動化與漏斗規劃：</strong>設計優質顧客旅程，提升品牌影響力與轉換率。</span>
+                        </li>
+                        <li class="flex items-start text-sm text-slate-700">
+                            <i class="fa-solid fa-angle-right text-accentTeal mr-2.5 mt-1"></i>
+                            <span><strong>高階決策者 AI 戰略諮詢：</strong>梳理企業 AI 發展藍圖，降低嘗試與導入成本。</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic & Tech Stack Section -->
+    <section id="academic" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Left: Academic Credentials -->
+                <div>
+                    <span class="text-xs font-bold text-accentTeal tracking-widest uppercase">Academic Experience</span>
+                    <h2 class="text-3xl font-bold text-darkText mt-2 mb-8">學術與教學經歷</h2>
+
+                    <div class="space-y-6">
+                        
+                        <!-- Item 1 -->
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors bg-fogGray/50">
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 text-techBlue flex items-center justify-center font-bold shrink-0">
+                                台大
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slateDark">台灣大學 行銷資料科學課程講師</h4>
+                                <p class="text-xs text-slate-500 mt-1">專注於行銷數據挖寶、用戶行為特徵分析與商業決策應用。</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl border border-slate-100 hover:border-purple-200 transition-colors bg-fogGray/50">
+                            <div class="w-12 h-12 rounded-xl bg-purple-100 text-techPurple flex items-center justify-center font-bold shrink-0">
+                                台大
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slateDark">台灣大學 創新育成中心 AI 課程講師</h4>
+                                <p class="text-xs text-slate-500 mt-1">引導新創團隊將人工智慧應用導入產品設計與服務驗證。</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors bg-fogGray/50">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-mintGreen flex items-center justify-center font-bold shrink-0">
+                                台大
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slateDark">台灣大學 新南向創業營隊講師（全英文授課）</h4>
+                                <p class="text-xs text-slate-500 mt-1">市場分析與行銷策略講師，協助國際團隊探索跨國商業模式。</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors bg-fogGray/50">
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 text-techBlue flex items-center justify-center font-bold shrink-0">
+                                北市大
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slateDark">台大 AI 連續性製程機器學習 / 北市大講師</h4>
+                                <p class="text-xs text-slate-500 mt-1">講授機器學習應用模型與行銷資料科學應用課程。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Tech Stack & Tools -->
+                <div>
+                    <span class="text-xs font-bold text-accentTeal tracking-widest uppercase">Tech Stack & Competencies</span>
+                    <h2 class="text-3xl font-bold text-darkText mt-2 mb-8">技術專長與核心技能</h2>
+
+                    <div class="glass-card p-8 rounded-3xl space-y-6">
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-sm text-darkText">人工智慧應用 (LLM 大型語言模型)</span>
+                                <span class="text-xs text-healthBlue font-bold">Expert</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-healthBlue to-accentTeal h-full rounded-full w-[95%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-sm text-darkText">Python 程式開發與資料分析</span>
+                                <span class="text-xs text-healthBlue font-bold">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-healthBlue to-accentTeal h-full rounded-full w-[90%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-sm text-darkText">Google Cloud Platform (GCP) 雲端架構</span>
+                                <span class="text-xs text-healthBlue font-bold">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-healthBlue to-accentTeal h-full rounded-full w-[85%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-sm text-darkText">AI 工作流程設計與自動化系統建置</span>
+                                <span class="text-xs text-healthBlue font-bold">Expert</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-healthBlue to-accentTeal h-full rounded-full w-[92%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Tags -->
+                        <div class="pt-4 border-t border-slate-200">
+                            <span class="text-xs text-slate-400 font-bold block mb-3">熱門技術標籤</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-blue-50 text-healthBlue text-xs font-semibold">LLMs</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-50 text-accentTeal text-xs font-semibold">Python</span>
+                                <span class="px-3 py-1 rounded-full bg-emerald-50 text-healthGreen text-xs font-semibold">RPA 自動化</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">GCP Cloud</span>
+                                <span class="px-3 py-1 rounded-full bg-blue-50 text-healthBlue text-xs font-semibold">AI Prompt Architecture</span>
+                                <span class="px-3 py-1 rounded-full bg-purple-50 text-accentTeal text-xs font-semibold">幼照數位轉型</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Links & Requirement Form -->
+    <section class="py-16 bg-white relative border-t border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-10 border border-slate-200">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                    <div class="max-w-2xl">
+                        <span class="text-xs font-bold text-healthBlue tracking-widest uppercase">Community & Contact</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-darkText mt-2">連結與需求表單</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">想要討論 AI 導入、數位轉型或課程合作，歡迎透過以下方式聯絡我。</p>
+                    </div>
+
+                    <div class="w-full lg:w-auto">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <a href="https://www.facebook.com/share/19Rrwiz6CW/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-center gap-2 rounded-2xl border border-blue-100 bg-blue-50/70 px-4 py-3 text-sm font-semibold text-healthBlue hover:bg-healthBlue hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+
+                            <a href="https://calendar.app.google/W179hdprWdTmcQws8" target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-center gap-2 rounded-2xl border border-purple-100 bg-purple-50/70 px-4 py-3 text-sm font-semibold text-accentTeal hover:bg-accentTeal hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <span>預約諮詢</span>
+                            </a>
+
+                            <a href="https://forms.gle/FA4eE8Wbdy3jZ4WR6" target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-center gap-2 rounded-2xl border border-emerald-100 bg-emerald-50/70 px-4 py-3 text-sm font-semibold text-healthGreen hover:bg-healthGreen hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>需求表單</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 rounded-2xl border border-dashed border-slate-300 bg-slate-50/80 p-6 sm:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div class="max-w-xl">
+                            <h4 class="text-lg font-bold text-darkText">填寶需求表單</h4>
+                            <p class="mt-2 text-sm text-slate-600">把您的需求、目標與想要解決的問題說明清楚，我會盡快回覆。</p>
+                        </div>
+                        <a href="https://forms.gle/FA4eE8Wbdy3jZ4WR6" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-gradient-to-r from-healthBlue to-accentTeal text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300">
+                            <i class="fa-solid fa-file-lines mr-2"></i>
+                            填寫需求表單
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Contact Section -->
+    <section id="contact" class="py-24 bg-fogGray relative border-t border-slate-200/60">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden border-2 border-blue-100">
+                
+                <!-- Background Accent Glow -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-200/40 rounded-full filter blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-200/40 rounded-full filter blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <span class="text-xs font-bold text-healthBlue tracking-widest uppercase">Start Your Transformation</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-darkText mt-2">準備好為您的機構開啟智慧轉型了嗎？</h2>
+                    <p class="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+                        不論您是幼照機構、月子中心，或是尋求 AI 導入與數位流程升級的企業團隊，歡迎預約 1-on-1 線上諮詢，一起探討最適化的解答。
+                    </p>
+
+                    <!-- Direct Google Calendar Appointment Button -->
+                    <div class="mt-8">
+                        <a href="https://calendar.app.google/W179hdprWdTmcQws8" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center justify-center px-8 py-4 rounded-2xl text-base font-bold text-white bg-gradient-to-r from-healthBlue via-accentTeal to-healthBlue bg-[length:200%_auto] hover:bg-right transition-all duration-500 shadow-xl shadow-healthBlue/20 hover:scale-105">
+                            <i class="fa-solid fa-calendar-days mr-2.5"></i>
+                            立即預約 1-on-1 策略諮詢
+                        </a>
+                        <p class="text-xs text-slate-400 mt-3">連結將開啟 Google Calendar 預約頁面</p>
+                    </div>
+
+                    <!-- Contact Footer Info -->
+                    <div class="mt-12 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-building text-healthBlue"></i>
+                            <span>iBind 伴伴｜教育與照護智慧管理平台</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope text-accentTeal"></i>
+                            <span>Jasper AI Transformation Consulting</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400">
+            <p>© 2026 iBind 伴伴 Jasper. All rights reserved.</p>
+            <p class="mt-2 sm:mt-0">Design System: Clean Futurism & Glassmorphism 2.0</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Section -->
+    <script>
+        // 1. Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 2. Typewriter Effect Logic
+        const typewriterText = "透過數據串接與人工智慧，重新定義嬰幼兒的照顧及護理。";
+        const typewriterEl = document.getElementById('typewriter-text');
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < typewriterText.length) {
+                typewriterEl.textContent += typewriterText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, 90);
+            }
+        }
+
+        // 3. Lightweight Background Canvas Particle System
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.radius = Math.random() * 2 + 1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(37, 99, 235, 0.35)';
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.floor(window.innerWidth / 25);
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Draw connecting tech lines
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(37, 99, 235, ${0.12 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Initialize on Load
+        window.onload = function() {
+            resizeCanvas();
+            initParticles();
+            animateParticles();
+            typeWriter();
+        };
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+    </script>
+</body>
+</html>
